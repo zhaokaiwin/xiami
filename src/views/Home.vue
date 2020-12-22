@@ -1,5 +1,6 @@
 <template>
   <div class="wrapper">
+    home
     <nav-header></nav-header>
     <router-view></router-view>
     <nav-footer></nav-footer>
@@ -7,21 +8,20 @@
 </template>
 
 <script>
-import NavFooter from '../components/NavFooter.vue'
 import NavHeader from '../components/NavHeader.vue'
+import NavFooter from '../components/NavFooter.vue'
 export default {
-  components: { NavFooter, NavHeader },
+  components: { NavHeader, NavFooter },
   props: {},
-  data() {
+  data () {
     return {}
   },
   watch: {},
   computed: {},
   methods: {},
-  created() {
-    console.log(123)
+  created () {
   },
-  mounted() {}
+  mounted () {}
 }
 </script>
 <style lang="scss" scoped>

@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">order-list</div>
+  <div class="wrapper">order-header</div>
 </template>
 
 <script>

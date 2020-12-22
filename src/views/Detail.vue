@@ -1,19 +1,19 @@
 <template>
-  <div class="wrapper"></div>
+  <div class="wrapper">detail</div>
 </template>
 
 <script>
 export default {
   components: {},
   props: {},
-  data() {
+  data () {
     return {}
   },
   watch: {},
   computed: {},
   methods: {},
-  created() {},
-  mounted() {}
+  created () {},
+  mounted () {}
 }
 </script>
 <style lang="scss" scoped>
