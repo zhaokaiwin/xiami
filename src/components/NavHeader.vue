@@ -46,7 +46,22 @@
           </div>
           <div class="item-menu">
             <span>Redme红米</span>
-            <div class="children"></div>
+            <div class="children">
+              <ul>
+                <li class="product" v-for="item in redMiList" :key="item.id">
+                  <a :href="`/#/product/${item.id}`" target="_blank">
+                    <div class="pro-img">
+                      <img
+                        :src="item.mainImage"
+                        :alt="item.subtitle"
+                      />
+                    </div>
+                    <div class="pro-name">{{item.name}}</div>
+                    <div class="pro-price">{{item.price | currency}}</div>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="item-menu">
             <span>电视</span>
@@ -60,8 +75,8 @@
                         alt=""
                       />
                     </div>
-                    <div class="pro-name">小米10至尊版</div>
-                    <div class="pro-price">5299元起</div>
+                    <div class="pro-name">小米电视大师  82英寸至尊纪念版</div>
+                    <div class="pro-price">49999元</div>
                   </a>
                 </li>
                  <li class="product">
@@ -72,8 +87,8 @@
                         alt=""
                       />
                     </div>
-                    <div class="pro-name">小米10至尊版</div>
-                    <div class="pro-price">5299元起</div>
+                    <div class="pro-name">小米电视大师 82英寸</div>
+                    <div class="pro-price">9999元</div>
                   </a>
                 </li>
                  <li class="product">
@@ -84,8 +99,8 @@
                         alt=""
                       />
                     </div>
-                    <div class="pro-name">小米10至尊版</div>
-                    <div class="pro-price">5299元起</div>
+                    <div class="pro-name">小米透视电视</div>
+                    <div class="pro-price">49999元</div>
                   </a>
                 </li>
                  <li class="product">
@@ -96,8 +111,8 @@
                         alt=""
                       />
                     </div>
-                    <div class="pro-name">小米10至尊版</div>
-                    <div class="pro-price">5299元起</div>
+                    <div class="pro-name">小米电视大师 65英寸OLED</div>
+                    <div class="pro-price">12999元</div>
                   </a>
                 </li>
                  <li class="product">
@@ -108,8 +123,8 @@
                         alt=""
                       />
                     </div>
-                    <div class="pro-name">小米10至尊版</div>
-                    <div class="pro-price">5299元起</div>
+                    <div class="pro-name">Redmi 智能电视MAX</div>
+                    <div class="pro-price">19999元</div>
                   </a>
                 </li>
                  <li class="product">
@@ -120,8 +135,8 @@
                         alt=""
                       />
                     </div>
-                    <div class="pro-name">小米10至尊版</div>
-                    <div class="pro-price">5299元起</div>
+                    <div class="pro-name">小米电视4A 60英寸</div>
+                    <div class="pro-price">2399元</div>
                   </a>
                 </li>
               </ul>
@@ -129,11 +144,40 @@
           </div>
           <div class="item-menu">
             <span>笔记本</span>
-            <div class="children"></div>
+            <div class="children">
+              <ul>
+                <li class="product" v-for="item in computerList" :key="item.id">
+                  <a :href="`/#/product/${item.id}`" target="_blank">
+                    <div class="pro-img">
+                      <img
+                        :src="item.mainImage"
+                        :alt="item.subtitle"
+                      />
+                    </div>
+                    <div class="pro-name">{{item.name}}</div>
+                    <div class="pro-price">{{item.price | currency}}</div>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="item-menu">
             <span>家电</span>
             <div class="children">
+               <ul>
+                <li class="product" v-for="item in furnitureList" :key="item.id">
+                  <a :href="`/#/product/${item.id}`" target="_blank">
+                    <div class="pro-img">
+                      <img
+                        :src="item.mainImage"
+                        :alt="item.subtitle"
+                      />
+                    </div>
+                    <div class="pro-name">{{item.name}}</div>
+                    <div class="pro-price">{{item.price | currency}}</div>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -154,7 +198,10 @@ export default {
   data () {
     return {
       username: 'kaiwin',
-      phoneList: []
+      phoneList: [],
+      redMiList: [],
+      computerList: [],
+      furnitureList: []
     }
   },
   filters: {
@@ -167,12 +214,29 @@ export default {
     getPhoneList () {
       this.axios.get('/products', {
         params: {
-          categoryId: '100012'
+          categoryId: '100012',
+          pageSize: 6
         }
       }).then((res) => {
+        // console.log(res)
         if (res.list.length >= 6) {
           this.phoneList = res.list.slice(0, 6)
         }
+      })
+    },
+    getRedMi () {
+      this.axios.get('/user/redmi').then(res => {
+        this.redMiList = res.list
+      })
+    },
+    getComputerList () {
+      this.axios.get('/user/computer').then(res => {
+        this.computerList = res.list
+      })
+    },
+    getFurniture () {
+      this.axios.get('/user/furniture').then(res => {
+        this.furnitureList = res.list
       })
     },
     goCart () {
@@ -184,6 +248,9 @@ export default {
   },
   mounted () {
     this.getPhoneList()
+    this.getRedMi()
+    this.getComputerList()
+    this.getFurniture()
   }
 }
 </script>
@@ -251,13 +318,13 @@ export default {
           display: inline-block;
           &::before {
             content: ' ';
-            @include bgImg(55px, 55px, '/imgs/mi-logo.png', 55px);
+            @include bgImg(55px, 55px, '/imgs/logo8.png', 55px);
             cursor: pointer;
             transition: margin 0.2s;
           }
           &::after {
             content: ' ';
-            @include bgImg(55px, 55px, '/imgs/mi-home.png', 55px);
+            @include bgImg(55px, 55px, '/imgs/logo6.png', 55px);
             cursor: pointer;
           }
           &:hover::before {
