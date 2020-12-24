@@ -23,11 +23,15 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import '../assets/scss/mixin.scss';
+@import '../assets/scss/base.scss';
 .service {
     padding: 30px 0;
     color:#666;
     font-size: 16px;
     text-align: center;
+    ul {
+        width: 100%;
+    }
     li {
         display: inline-block;
         width: 24.9%;
@@ -51,6 +55,9 @@ export default {
         }
         .icon-post {
             @include bgImg(20px,20px,'/imgs/icon-post.png')
+        }
+        &:last-child {
+            border: none;
         }
     }
 }
