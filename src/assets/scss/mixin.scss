@@ -1,13 +1,29 @@
 // flex 布局复用
-@mixin flex($row:space-between,$col:center) {
+@mixin flex($row: space-between, $col: center) {
     display: flex;
     justify-content: $row;
     align-items: $col;
 }
-@mixin bgImg($w,$h,$url,$size:contain) {
+@mixin bgImg($w, $h, $url, $size: contain) {
     display: inline-block;
     background: url($url) no-repeat center;
     background-size: $size;
+    width: $w;
+    height: $h;
+}
+@mixin positionImg($pos: absolute,$top: 0,$right: 0, $w: 0, $h: 0, $url: '', $size: contain) {
+    position: $pos;
+    top: $top;
+    right: $right;
+    background: url($url) no-repeat center;
+    background-size: $size;
+    width: $w;
+    height: $h;
+}
+@mixin position($pos: absolute, $left: 0, $top: 0, $w: 100%, $h: 100%) {
+    position: $pos;
+    top: $top;
+    left: $left;
     width: $w;
     height: $h;
 }

@@ -276,6 +276,7 @@ export default {
     background-color: #333333;
     color: #b0b0b0;
     .container {
+      @include flex();
       a {
         color: #b0b0b0;
         margin-right: 17px;
