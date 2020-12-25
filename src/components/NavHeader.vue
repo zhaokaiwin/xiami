@@ -9,7 +9,7 @@
           <a href="javascript:;">协议规则</a>
         </div>
         <div class="topbar-user">
-          <a href="javascript:;" v-if="username"><span style="color:#ff6700">尊敬的</span>{{username}}</a>
+          <a href="javascript:;" v-if="username"><span style="color:#ddd1d1">尊敬的</span>{{username}}</a>
           <a href="javascript:;" v-if="!username" @click="login">登录</a>
           <a href="javascript:;" v-if="username">我的订单</a>
           <a href="javascript:;" class="my-car"
