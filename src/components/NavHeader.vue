@@ -198,7 +198,7 @@ export default {
   name: 'nav-header',
   data () {
     return {
-      username: 'kaiwin',
+      username: '',
       phoneList: [],
       redMiList: [],
       computerList: [],
@@ -294,6 +294,7 @@ export default {
         width: 120px;
         background-color: #424242;
         text-align: center;
+        margin-right: 0;
         .icon-car {
           @include bgImg(16px, 12px, '/imgs/icon-cart.png');
           margin-right: 3px;

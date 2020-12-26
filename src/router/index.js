@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Index from '../views/Index.vue'
+import Login from '../views/Login.vue'
 import Product from '../views/Product.vue'
 import Detail from '../views/Detail.vue'
 import Cart from '../views/Cart.vue'
@@ -66,6 +67,11 @@ const routes = [
         component: AliPay
       }
     ]
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login
   }
 ]
 
