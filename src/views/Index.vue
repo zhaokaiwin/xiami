@@ -11,7 +11,7 @@
                   <li v-for="(sub, index) in item" :key="index">
                     <a :href="`${sub ? `/#/product/${sub.id}` : ''}`">
                       <img
-                        :src="`${sub ? sub.img : '/imgs/logo.png'}`"
+                        v-lazy="`${sub ? sub.img : '/imgs/logo.png'}`"
                         alt=""
                       />
                       {{ sub ? sub.name : 'Kaiwin' }}
@@ -27,7 +27,7 @@
                   <li v-for="(sub, index) in item" :key="index">
                     <a :href="`${sub ? `/#/product/${sub.id}` : ''}`">
                       <img
-                        :src="`${sub ? sub.img : 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/37576cef378ef2805c20b9ab2a9d6d3d.png'}`"
+                        v-lazy="`${sub ? sub.img : 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/37576cef378ef2805c20b9ab2a9d6d3d.png'}`"
                         alt=""
                       />
                       {{ sub ? sub.name : 'Kaiwin电视' }}
@@ -43,7 +43,7 @@
                   <li v-for="(sub, index) in item" :key="index">
                     <a :href="`${sub ? `/#/product/${sub.id}` : ''}`">
                       <img
-                        :src="`${sub ? sub.img : 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ea840f3f79798c9a29d9921b9edf50ac.png'}`"
+                        v-lazy="`${sub ? sub.img : 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ea840f3f79798c9a29d9921b9edf50ac.png'}`"
                         alt=""
                       />
                       {{ sub ? sub.name : 'Kaiwin笔记本' }}
@@ -59,7 +59,7 @@
                   <li v-for="(sub, index) in item" :key="index">
                     <a :href="`${sub ? `/#/product/${sub.id}` : ''}`">
                       <img
-                        :src="`${sub ? sub.img : 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/abeb200aaaee68d4635c6235d3ffb3f3.jpg'}`"
+                        v-lazy="`${sub ? sub.img : 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/abeb200aaaee68d4635c6235d3ffb3f3.jpg'}`"
                         alt=""
                       />
                       {{ sub ? sub.name : 'Kaiwin家具' }}
@@ -75,7 +75,7 @@
                   <li v-for="(sub, index) in item" :key="index">
                     <a :href="`${sub ? `/#/product/${sub.id}` : ''}`">
                       <img
-                        :src="`${sub ? sub.img : 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/971c8c01a246c7ac69a4c9be9e77e832.jpg'}`"
+                        v-lazy="`${sub ? sub.img : 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/971c8c01a246c7ac69a4c9be9e77e832.jpg'}`"
                         alt=""
                       />
                       {{ sub ? sub.name : 'Kaiwin出行' }}
@@ -91,7 +91,7 @@
                   <li v-for="(sub, index) in item" :key="index">
                     <a :href="`${sub ? `/#/product/${sub.id}` : ''}`">
                       <img
-                        :src="`${sub ? sub.img : 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/067f4a6f0ffb264ed40734a97deae52d.jpg'}`"
+                        v-lazy="`${sub ? sub.img : 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/067f4a6f0ffb264ed40734a97deae52d.jpg'}`"
                         alt=""
                       />
                       {{ sub ? sub.name : 'Kaiwin智能' }}
@@ -107,7 +107,7 @@
                   <li v-for="(sub, index) in item" :key="index">
                     <a :href="`${sub ? `/#/product/${sub.id}` : ''}`">
                       <img
-                        :src="`${sub ? sub.img : 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/5c6e60e48edf17219724faad95963b93.jpg'}`"
+                        v-lazy="`${sub ? sub.img : 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/5c6e60e48edf17219724faad95963b93.jpg'}`"
                         alt=""
                       />
                       {{ sub ? sub.name : 'Kaiwin智能' }}
@@ -123,7 +123,7 @@
                   <li v-for="(sub, index) in item" :key="index">
                     <a :href="`${sub ? `/#/product/${sub.id}` : ''}`">
                       <img
-                        :src="`${sub ? sub.img : 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4bf92a8a492f692a81794f52fefd1a29.png'}`"
+                        v-lazy="`${sub ? sub.img : 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4bf92a8a492f692a81794f52fefd1a29.png'}`"
                         alt=""
                       />
                       {{ sub ? sub.name : 'Kaiwin健康' }}
@@ -139,7 +139,7 @@
                   <li v-for="(sub, index) in item" :key="index">
                     <a :href="`${sub ? `/#/product/${sub.id}` : ''}`">
                       <img
-                        :src="`${sub ? sub.img : 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/abe665fafbef94eb3626ae8baf1de97e.jpg'}`"
+                        v-lazy="`${sub ? sub.img : 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/abe665fafbef94eb3626ae8baf1de97e.jpg'}`"
                         alt=""
                       />
                       {{ sub ? sub.name : 'Kaiwin音乐' }}
@@ -155,7 +155,7 @@
                   <li v-for="(sub, index) in item" :key="index">
                     <a :href="`${sub ? `/#/product/${sub.id}` : ''}`">
                       <img
-                        :src="`${sub ? sub.img : 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8e9bc4f84825f80ce520eefa4f762939.jpg'}`"
+                        v-lazy="`${sub ? sub.img : 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8e9bc4f84825f80ce520eefa4f762939.jpg'}`"
                         alt=""
                       />
                       {{ sub ? sub.name : 'Kaiwin生活' }}
@@ -179,12 +179,12 @@
       </div>
       <div class="adv-box">
         <a :href="`/#/product/${item.id}`" v-for="item in advList" :key="item.id">
-          <img :src="item.img" alt="">
+          <img v-lazy="item.img" alt="">
         </a>
       </div>
       <div class="banner">
         <a href="/#/product/30">
-          <img src="/imgs/banner-1.jpg" alt="">
+          <img v-lazy="'/imgs/banner-1.jpg'" alt="">
         </a>
       </div>
     </div>
@@ -198,14 +198,14 @@
           <div class="product-list">
             <div class="list" v-for="(arr, index) in productList" :key="index">
               <div class="item-list" v-for="(item, index) in arr" :key="index">
-                <span :class="{'new-pro':index%2===0}">新品</span>
+                <span  :class="{'new-pro':index%2===0}">新品</span>
                 <div class="item-img">
-                  <img :src="item.mainImage" alt="">
+                  <img v-lazy="item.mainImage" alt="">
                 </div>
                 <div class="item-info">
                   <h3>{{item.name}}</h3>
                   <p>{{item.subtitle}}</p>
-                  <p>{{item.price}}元</p>
+                  <p @click="addCart(item.id)">{{item.price}}元</p>
                 </div>
               </div>
             </div>
@@ -221,7 +221,9 @@
       </div>
     </div>
     <service-bar></service-bar>
-    <modal title="提示" sureText="查看购物车" btnType="1" modalType="middle" :showModal="true">
+    <modal title="提示" sureText="查看购物车" btnType="1" modalType="middle" :showModal="showModal" @submit="goCart"
+    @cancel="showModal=false"
+    >
       <template #body>
        <p>商品添加成功</p>
       </template>
@@ -238,6 +240,7 @@ export default {
   name: 'index',
   data () {
     return {
+      showModal: false,
       swiperOptionsObject: {
         autoplay: {
           disableOnInteraction: false
@@ -602,6 +605,20 @@ export default {
       const res = await this.$http.get('/products', { params })
       res.list = res.list.slice(6, 14)
       this.productList = [res.list.slice(0, 4), res.list.slice(4, 8)]
+    },
+    addCart (id) {
+      this.showModal = true
+      // this.$http.post('/carts', {
+      //   productId: id,
+      //   selected: true
+      // }).then((res) => {
+      //   console.log(res)
+      // }).catch((err) => {
+      //   console.log(err)
+      // })
+    },
+    goCart () {
+      this.$router.push('/cart')
     }
   }
 }
@@ -618,13 +635,26 @@ export default {
   .swiper-box {
     position: relative;
     .swiper-button-prev {
-      left: 242px;
-      --swiper-theme-color: #ec4dd7;
+      left: 234px;
+      --swiper-theme-color: #ec4d4d;
       z-index: 1;
+      width: 50px;
+    height: 75px;
+    &:hover{
+      --swiper-theme-color: #ffffff;
+      background: rgba(0,0,0,0.3);
+    }
     }
     .swiper-button-next {
-      --swiper-theme-color: #ec4dd7;
+      --swiper-theme-color: #ec4d4d;
       z-index: 1;
+      width: 50px;
+    height: 75px;
+    right:0px;
+    &:hover{
+      background: rgba(0,0,0,0.3);
+      --swiper-theme-color: #ffffff;
+    }
     }
     .nav-menu {
       .menu-wrap {
@@ -739,6 +769,10 @@ export default {
       display: inline-block;
       width: 296px;
       height: 170px;
+      transition: box-shadow .2s linear;
+      &:hover {
+      box-shadow: 0 15px 30px rgba(0, 0, 0, .1);
+      }
     }
   }
   .banner {
@@ -783,6 +817,7 @@ export default {
               height: 24px;
               line-height: 24px;
               font-size: $fontJ;
+              color: $colorG;
               &.new-pro {
                 color: $colorG;
                 background-color: #7ecf68;
