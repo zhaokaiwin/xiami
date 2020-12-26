@@ -5,6 +5,7 @@ import store from './store'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueLazyload from 'vue-lazyload'
+import VueCookie from 'vue-cookie'
 const mock = true
 if (mock) {
   require('./mock/api')
@@ -19,15 +20,20 @@ axios.defaults.timeout = 8000 // 超时8s
 // 接口错误拦截
 axios.interceptors.response.use(function (response) {
   const res = response.data
+  let path = location.hash
   if (res.status === 0) {
     return res.data
   } else if (res.status === 10) {
-    window.location.href = '/#/login'
+    if (path !== '#/index') {
+      window.location.href = '/#/login'
+    }
   } else {
     alert(res.msg)
+    return Promise.reject(res)
   }
 })
 Vue.use(VueAxios, axios)
+Vue.use(VueCookie)
 Vue.use(VueLazyload, {
   loading: '/imgs/loading-svg/audio.svg'
 })

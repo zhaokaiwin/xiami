@@ -7,6 +7,20 @@
 <script>
 export default {
   mounted () {
+    // this.getUser()
+    // this.getCartCount()
+  },
+  methods: {
+    getUser () {
+      this.$http.get('/user').then(() => {
+        // to-do 保存在vuex中
+      })
+    },
+    getCartCount () {
+      this.$http.get('/carts/products/sum').then(() => {
+        // to-do 保存在vuex中
+      })
+    }
   }
 }
 </script>
