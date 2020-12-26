@@ -1,4 +1,4 @@
-# xiami
+# 小米商城实现
 
 ## Project setup
 ```
