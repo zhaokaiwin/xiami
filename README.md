@@ -22,6 +22,8 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
 一、项目描述
 
 - 一个基于 vue、ElementUI，通过 vue 组件实现数据动态刷新渲染，详情具体组件使用情况请点击下方 ElementUI 文档。
