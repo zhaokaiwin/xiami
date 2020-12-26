@@ -1,5 +1,6 @@
 <template>
   <div class="header">
+      <div class="nav-title"></div>
     <div class="nav-topbar">
       <div class="container">
         <div class="topbar-menu">
@@ -33,7 +34,7 @@
                   <a :href="`/#/product/${item.id}`" target="_blank">
                     <div class="pro-img">
                       <img
-                        :src="item.mainImage"
+                        v-lazy="item.mainImage"
                         :alt="item.subtitle"
                       />
                     </div>
@@ -52,7 +53,7 @@
                   <a :href="`/#/product/${item.id}`" target="_blank">
                     <div class="pro-img">
                       <img
-                        :src="item.mainImage"
+                        v-lazy="item.mainImage"
                         :alt="item.subtitle"
                       />
                     </div>
@@ -71,7 +72,7 @@
                   <a href="#" target="_blank">
                     <div class="pro-img">
                       <img
-                        src="/imgs/nav-img/nav-3-6.png"
+                        v-lazy="'/imgs/nav-img/nav-3-6.png'"
                         alt=""
                       />
                     </div>
@@ -83,7 +84,7 @@
                   <a href="#" target="_blank">
                     <div class="pro-img">
                       <img
-                        src="/imgs/nav-img/nav-3-1.jpg"
+                        v-lazy="'/imgs/nav-img/nav-3-1.jpg'"
                         alt=""
                       />
                     </div>
@@ -95,7 +96,7 @@
                   <a href="#" target="_blank">
                     <div class="pro-img">
                       <img
-                        src="/imgs/nav-img/nav-3-2.jpg"
+                        v-lazy="'/imgs/nav-img/nav-3-2.jpg'"
                         alt=""
                       />
                     </div>
@@ -107,7 +108,7 @@
                   <a href="#" target="_blank">
                     <div class="pro-img">
                       <img
-                        src="/imgs/nav-img/nav-3-3.png"
+                        v-lazy="'/imgs/nav-img/nav-3-3.png'"
                         alt=""
                       />
                     </div>
@@ -119,7 +120,7 @@
                   <a href="#" target="_blank">
                     <div class="pro-img">
                       <img
-                        src="/imgs/nav-img/nav-3-4.jpg"
+                        v-lazy="'/imgs/nav-img/nav-3-4.jpg'"
                         alt=""
                       />
                     </div>
@@ -131,7 +132,7 @@
                   <a href="#" target="_blank">
                     <div class="pro-img">
                       <img
-                        src="/imgs/nav-img/nav-3-5.jpg"
+                        v-lazy="'/imgs/nav-img/nav-3-5.jpg'"
                         alt=""
                       />
                     </div>
@@ -150,7 +151,7 @@
                   <a :href="`/#/product/${item.id}`" target="_blank">
                     <div class="pro-img">
                       <img
-                        :src="item.mainImage"
+                        v-lazy="item.mainImage"
                         :alt="item.subtitle"
                       />
                     </div>
@@ -169,7 +170,7 @@
                   <a :href="`/#/product/${item.id}`" target="_blank">
                     <div class="pro-img">
                       <img
-                        :src="item.mainImage"
+                        v-lazy="item.mainImage"
                         :alt="item.subtitle"
                       />
                     </div>
@@ -270,6 +271,10 @@ export default {
   opacity: 1;
 }
 .header {
+   .nav-title {
+     @include bgImg(100%, 120px, '/imgs/header-title.jpeg', cover);
+     vertical-align: middle;
+    }
   .nav-topbar {
     height: 39px;
     line-height: 39px;

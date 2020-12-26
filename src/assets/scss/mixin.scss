@@ -20,7 +20,7 @@
     width: $w;
     height: $h;
 }
-@mixin position($pos: absolute, $left: 0, $top: 0, $w: 100%, $h: 100%) {
+@mixin position($pos: absolute, $top: 0, $left: 0, $w: 100%, $h: 100%) {
     position: $pos;
     top: $top;
     left: $left;
