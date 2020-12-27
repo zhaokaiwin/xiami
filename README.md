@@ -31,8 +31,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - 项目环境：vue-cli-3.0、webpack-4.0、npm-6.14.8、node-v14.15.1、element-ui-2.14.1.
 
 友情链接：
-Vue 官方文档
-ElmentUI官方文档
+1. [Vue 官方文档](https://cn.vuejs.org/v2/guide/instance.html)
+2. [ElmentUI官方文档](https://element.eleme.cn/#/zh-CN/component/installation)
 
 项目首页截图
-![输入图片说明](https://images.gitee.com/uploads/images/2020/0318/220710_4b0bf590_4964818.png "JPW8NE}N@Y{HLYA$ZPY%T24.png")
+![输入图片说明](https://gitee.com/zhao_kai0315/imgs/blob/master/xiami.png)
