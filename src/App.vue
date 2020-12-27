@@ -5,20 +5,24 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
   mounted () {
-    // this.getUser()
-    // this.getCartCount()
+    this.getUser()
+    this.getCartCount()
   },
   methods: {
+    ...mapActions(['saveUserName']),
     getUser () {
-      this.$http.get('/user').then(() => {
+      this.$http.get('/user').then((res) => {
         // to-do 保存在vuex中
+        // this.$store.dispatch('saveUserName', res.username)
+        this.saveUserName(res.username)
       })
     },
     getCartCount () {
-      this.$http.get('/carts/products/sum').then(() => {
-        // to-do 保存在vuex中
+      this.$http.get('/carts/products/sum').then((res) => {
+        this.$store.dispatch('saveCartCount', res)
       })
     }
   }

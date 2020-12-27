@@ -10,12 +10,14 @@
           <a href="javascript:;">协议规则</a>
         </div>
         <div class="topbar-user">
-          <a href="javascript:;" v-if="username"><span style="color:#ddd1d1">尊敬的</span>{{username}}</a>
+          <a href="javascript:;" v-if="username" class="username"><span style="color:#ddd1d1">尊敬的</span>{{username}}
+          <span class="exit" @click="exit">退出</span>
+          </a>
           <a href="javascript:;" v-if="!username" @click="login">登录</a>
           <a href="javascript:;" v-if="username">我的订单</a>
           <a href="javascript:;" class="my-car"
           @click="goCart"
-            ><span class="icon-car"></span>购物车</a
+            ><span class="icon-car"></span>购物车({{cartCount}})</a
           >
         </div>
       </div>
@@ -194,16 +196,25 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'nav-header',
   data () {
     return {
-      username: '',
       phoneList: [],
       redMiList: [],
       computerList: [],
       furnitureList: []
     }
+  },
+  computed: {
+    ...mapState(['username', 'cartCount'])
+    // username () {
+    //   return this.$store.state.username
+    // },
+    // cartCount () {
+    //   return this.$store.state.cartCount
+    // }
   },
   filters: {
     currency (val) {
@@ -245,6 +256,9 @@ export default {
     },
     login () {
       this.$router.push('/login')
+    },
+    exit () {
+      this.$store.dispatch('exitUser', '')
     }
   },
   mounted () {
@@ -280,6 +294,37 @@ export default {
     line-height: 39px;
     background-color: #333333;
     color: #b0b0b0;
+    .topbar-user {
+      .username {
+        position: relative;
+        display: inline-block;
+        height: 39px;
+        .exit {
+        display: inline-block;
+        color: #b0b0b0;
+        width: 50px;
+        height: 24px;
+        line-height: 24px;
+        display: none;
+        position: absolute;
+        text-align: center;
+        top: 39px;
+        left: 22px;
+        z-index: 30;
+        }
+        &:hover {
+         .exit {
+          display: block;
+          background: rgba(0, 0, 0, 0.11);
+          color: white;
+          &:hover {
+          background:#333;
+          color: white;
+          }
+         }
+        }
+      }
+    }
     .container {
       @include flex();
       a {

@@ -5,17 +5,18 @@
       <div>Kaiwin前端进阶之路</div>
     </div>
     <div class="footer-link">
-      <a href="https://github.com/zhaokaiwin">Kaiwin的Github地址</a>
-      <a href="https://blog.csdn.net/ZhaoKaiSX">Kaiwin的CSDN博客</a>
-      <a href="http://zhaokaige.com/">Kaiwin的个人网站</a>
-      <a href="http://zhaokaige.com/">Kaiwin京东商城</a>
+      <a target="_blank" href="https://github.com/zhaokaiwin">Kaiwin的Github地址</a>
+      <a target="_blank" href="https://blog.csdn.net/ZhaoKaiSX">Kaiwin的CSDN博客</a>
+      <a target="_blank" href="http://zhaokaige.com/">Kaiwin的个人网站</a>
+      <a target="_blank" href="http://zhaokaige.com/">Kaiwin京东商城</a>
     </div>
     <div>
       Copyright © 2020-2021
-      <a class="website" href="http://zhaokaige.com/">zhaokaige.com</a> 版权所有
+      <a class="website" href="http://zhaokaige.com/" target="_blank">zhaokaige.com</a> 版权所有
       <a
         class="shanxi"
         href="https://beian.miit.gov.cn/?spm=5176.13841030.7y9jhqsfz.110.568d5c69tL6jBh"
+        target="_blank"
         >陕ICP备20000817号</a
       >
     </div>

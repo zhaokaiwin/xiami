@@ -5,7 +5,7 @@
     </div>
     <div class="wrapper">
       <div class="container">
-        <div class="login-form">
+        <form class="login-form">
           <h3>
             <span class="checked">帐号登录</span><span class="sep-line">|</span><span>扫码登录</span>
           </h3>
@@ -13,37 +13,27 @@
             <input type="text" placeholder="请输入帐号" v-model="username">
           </div>
           <div class="input">
-            <input type="password" placeholder="请输入密码" v-model="password">
+            <input type="password" autocomplete="off" placeholder="请输入密码" v-model="password">
           </div>
           <div class="btn-box">
             <a href="javascript:;" class="btn" @click="login">登录</a>
           </div>
           <div class="tips">
-            <div class="sms" @click="register">手机短信登录/注册</div>
+            <div class="sms" @click="$router.push('/register')">手机短信登录/注册</div>
             <div class="reg">立即注册<span>|</span>忘记密码？</div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
-    <div class="footer">
-      <div class="footer-link">
-        <a href="https://github.com/zhaokaiwin" target="_blank">Kaiwin的Github地址</a><span>|</span>
-        <a href="https://blog.csdn.net/ZhaoKaiSX" target="_blank">Kaiwin的CSDN博客</a><span>|</span>
-        <a href="http://zhaokaige.com/" target="_blank">Kaiwin的个人网站</a><span>|</span>
-        <a href="http://zhaokaige.com/" target="_blank">Kaiwin京东商城</a>
-      </div>
-      <p class="copyright">Copyright ©2019<a class="website" href="http://zhaokaige.com/">zhaokaige.com</a> 版权所有
-      <a
-        class="shanxi"
-        href="https://beian.miit.gov.cn/?spm=5176.13841030.7y9jhqsfz.110.568d5c69tL6jBh"
-        >陕ICP备20000817号</a
-      ></p>
-    </div>
+      <second-footer></second-footer>
   </div>
 </template>
 <script>
 export default {
   name: 'login',
+  components: {
+    SecondFooter: () => import('@/components/SecondFooter')
+  },
   data () {
     return {
       username: '',
@@ -59,17 +49,8 @@ export default {
         password
       }).then((res) => {
         this.$cookie.set('userId', res.id, { expires: '1M' })
+        this.$store.dispatch('saveUserName', res.username)
         this.$router.push('/index')
-        console.log(res)
-      })
-    },
-    register () {
-      this.$http.post('/user/register', {
-        username: '123',
-        password: '123',
-        email: '123'
-      }).then((res) => {
-        alert('注册成功')
       })
     }
   }
@@ -148,40 +129,6 @@ export default {
             }
           }
         }
-      }
-    }
-  }
-  .footer{
-    height:100px;
-    padding-top:60px;
-    color:#999999;
-    font-size:16px;
-    text-align:center;
-    .footer-link{
-      a{
-        color:#999999;
-        display:inline-block;
-        &:hover {
-          color: #FF6600;
-        }
-      }
-      span{
-        margin:0 10px;
-      }
-    }
-    .copyright{
-      margin-top:13px;
-      .website {
-      color: #999;
-        &:hover {
-          color: #FF6600;
-        }
-      }
-      .shanxi {
-      color: #999;
-       &:hover {
-      color: #FF6600;
-      }
       }
     }
   }
