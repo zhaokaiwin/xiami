@@ -35,5 +35,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 2. [ElmentUI官方文档](https://element.eleme.cn/#/zh-CN/component/installation)
 
 项目首页截图
-![输入图片说明](https://github.com/zhaokaiwin/zhaokaiwin/blob/main/hello-world.gif)
+![输入图片说明](https://github.com/zhaokaiwin/zhaokaiwin/blob/main/xiami.png)
 
