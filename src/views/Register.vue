@@ -67,7 +67,7 @@ export default {
         alert('注册成功,即将跳转到登录页面')
         setTimeout(() => {
           this.$router.push('/login')
-        }, 1500);
+        }, 1500)
       })
     }
   }

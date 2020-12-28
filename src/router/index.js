@@ -79,6 +79,11 @@ const routes = [
     component: () => import('@/views/Register')
   },
   {
+    path: '/test',
+    name: 'test',
+    component: () => import('@/views/Test')
+  },
+  {
     path: '*',
     component: () => import('@/views/ErrorPath')
   }
