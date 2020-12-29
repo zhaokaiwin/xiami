@@ -43,7 +43,10 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 #### 商城首页
    ![商城首页](https://github.com/zhaokaiwin/zhaokaiwin/blob/main/xiami.png)   
 #### 商品页面
-   ![商品页面](https://github.com/zhaokaiwin/zhaokaiwin/blob/main/%E5%95%86%E5%93%81%E9%A1%B5%E9%9D%A2.png)   
+   ![商品页面](https://github.com/zhaokaiwin/zhaokaiwin/blob/main/%E5%95%86%E5%93%81%E9%A1%B5%E9%9D%A2.png) 
+#### 商品详情页面
+   ![商品详情页面](https://github.com/zhaokaiwin/zhaokaiwin/blob/main/%E5%95%86%E5%93%81%E8%AF%A6%E6%83%85%E9%A1%B5%E9%9D%A2.png) 
+  
 二、项目目录介绍  
 
 
