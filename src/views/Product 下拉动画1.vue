@@ -49,11 +49,11 @@
       <div class="item-video">
         <h2>60帧超慢动作摄影<br/>慢慢回味每一瞬间的精彩</h2>
         <p>后置960帧电影般超慢动作视频，将眨眼间的美妙展现得淋漓尽致！<br/>更能AI 精准分析视频内容，15个场景智能匹配背景音效。</p>
-        <div class="video-bg" @click="showSlide='slide-down'"></div>
+        <div class="video-bg" @click="showSlide=true"></div>
         <div class="video-box">
-          <div class="overlay" v-if="showSlide==='slide-down'"></div>
-          <div class="video" :class="showSlide">
-            <span class="icon-close" @click="showSlide='slide-up'"></span>
+          <div class="overlay" v-if="showSlide"></div>
+          <div class="video" :class="{ 'slide': showSlide }">
+            <span class="icon-close" @click="showSlide=false"></span>
             <video src="/imgs/product/video.mp4" controls="controls" muted autoplay></video>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default {
   },
   data () {
     return {
-      showSlide: '', // 控制动画效果
+      showSlide: false, // 控制动画效果
       product: {}, // 商品信息
       swiperOption: {
         autoplay: {
@@ -193,31 +193,11 @@ export default {
           top: -50%;
           left: 50%;
           z-index: 11;
-          &.slide-down {
-            animation: slideDown .5s ease-in-out forwards;
-          }
-          &.slide-up {
-            animation: slideUp .5s ease-in-out forwards;
-          }
-          @keyframes slideDown {
-            from {
-              top: -50%;
-              opacity: 0;
-            }
-            to {
-              top: 50%;
-              opacity: 1;
-            }
-          }
-           @keyframes slideUp {
-            from {
-              top: 50%;
-              opacity: 1;
-            }
-            to {
-              top: -50%;
-              opacity: 0;
-            }
+          opacity: 0;
+          transition: all .5s;
+          &.slide {
+            top: 50%;
+            opacity: 1;
           }
           video {
             width: 100%;
