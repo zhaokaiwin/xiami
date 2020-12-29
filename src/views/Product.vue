@@ -1,8 +1,8 @@
 <template>
   <div class="product">
-    <product-section>
+    <product-section :title="product.name">
       <template v-slot:buy>
-        <div class="btn">立即购买</div>
+        <div class="btn" @click="buy">立即购买</div>
       </template>
     </product-section>
     <div class="content">
@@ -10,13 +10,13 @@
         <h2>{{ product.name }}</h2>
         <h3>{{ product.subtitle }}</h3>
         <p>
-          <a href="" id="">全球首款双频 GP</a>
+          <a href="javascript:;" id="">全球首款双频 GP</a>
           <span>|</span>
-          <a href="" id="">骁龙845</a>
+          <a href="javascript:;" id="">骁龙845</a>
           <span>|</span>
-          <a href="" id="">AI 变焦双摄</a>
+          <a href="javascript:;" id="">AI 变焦双摄</a>
           <span>|</span>
-          <a href="" id="">红外人脸识别</a>
+          <a href="javascript:;" id="">红外人脸识别</a>
         </p>
         <div class="price">
           <span>￥<em>{{ product.price }}</em></span>
@@ -51,7 +51,7 @@
         <p>后置960帧电影般超慢动作视频，将眨眼间的美妙展现得淋漓尽致！<br/>更能AI 精准分析视频内容，15个场景智能匹配背景音效。</p>
         <div class="video-bg" @click="showSlide='slide-down'"></div>
         <div class="video-box">
-          <div class="overlay" v-if="showSlide==='slide-down'"></div>
+          <div class="overlay" v-show="showSlide==='slide-down'"></div>
           <div class="video" :class="showSlide">
             <span class="icon-close" @click="showSlide='slide-up'"></span>
             <video src="/imgs/product/video.mp4" controls="controls" muted autoplay></video>
@@ -88,6 +88,21 @@ export default {
           clickable: true
         }
       }
+    }
+  },
+  mounted () {
+    this.getProductInfo()
+  },
+  methods: {
+    getProductInfo () {
+      const id = this.$route.params.id
+      this.$http.get(`/products/${id}`).then(res => {
+        this.product = res
+      })
+    },
+    buy () {
+      const id = this.$route.params.id
+      this.$router.push(`/detail/${id}`)
     }
   }
 }
@@ -193,6 +208,7 @@ export default {
           top: -50%;
           left: 50%;
           z-index: 11;
+          opacity: 0;
           &.slide-down {
             animation: slideDown .5s ease-in-out forwards;
           }
