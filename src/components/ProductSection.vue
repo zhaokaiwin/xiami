@@ -2,7 +2,7 @@
   <div class="pro-sec" :class="{ 'is-fixed': isFiexd }">
       <div class="container">
           <div class="pro-sec-left">
-              <span>Redmi 9A</span>
+              <span>{{title}}</span>
               <a href="javascript:;">Redmi 9</a>
               <a href="javascript:;">Redmi 8</a>
               <a href="javascript:;">Redmi 8A</a>
@@ -21,6 +21,7 @@
 
 <script>
 export default {
+  props: ['title'],
   data () {
     return {
       isFiexd: false
@@ -54,6 +55,7 @@ export default {
     border-bottom: 1px solid #e0e0e0;
     box-shadow: 0 5px 5px rgba(0, 0, 0, .07);
     animation: height 0.3s;
+    z-index: 33;
   }
   height: 70px;
   border-top: 1px solid $colorH;

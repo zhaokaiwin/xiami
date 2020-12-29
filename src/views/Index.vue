@@ -607,15 +607,16 @@ export default {
       this.productList = [res.list.slice(0, 4), res.list.slice(4, 8)]
     },
     addCart (id) {
-      this.showModal = true
-      // this.$http.post('/carts', {
-      //   productId: id,
-      //   selected: true
-      // }).then((res) => {
-      //   console.log(res)
-      // }).catch((err) => {
-      //   console.log(err)
-      // })
+      this.$http.post('/carts', {
+        productId: id,
+        selected: true
+      }).then((res) => {
+        this.showModal = true
+        this.$store.dispatch('saveCartCount', res.cartTotalQuantity)
+      }).catch((err) => {
+        this.showModal = true
+        console.log(err)
+      })
     },
     goCart () {
       this.$router.push('/cart')
