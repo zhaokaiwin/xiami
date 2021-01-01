@@ -53,7 +53,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 #### 注册页面
    ![注册页面](https://github.com/zhaokaiwin/zhaokaiwin/blob/main/%E6%B3%A8%E5%86%8C%E9%A1%B5%E9%9D%A2.png) 
 
-   
+
 二、项目目录介绍  
 
 
@@ -77,7 +77,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## 三、使用介绍
 1. **如何请求数据**
    建议使用 axios配合vue-axios 进行数据请求，在 main.js 位置进行全局配置
-```
+```javascript
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 Vue.use(VueAxios, axios)
