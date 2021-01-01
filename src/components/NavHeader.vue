@@ -258,7 +258,17 @@ export default {
       this.$router.push('/login')
     },
     exit () {
-      this.$store.dispatch('exitUser', '')
+      this.axios.post('/user/logout').then((res) => {
+        this.$message.success('退出成功')
+        this.$cookie.set('userId', '', { expires: '-1' })
+        this.$store.dispatch('exitUser', '')
+        this.$store.dispatch('saveCartCount', 0)
+      })
+    },
+    getCartCount () {
+      this.$http.get('/carts/products/sum').then((res) => {
+        this.$store.dispatch('saveCartCount', res)
+      })
     }
   },
   mounted () {
@@ -266,6 +276,9 @@ export default {
     this.getRedMi()
     this.getComputerList()
     this.getFurniture()
+    if (this.$route.params && this.$route.params === 'login') {
+      this.getCartCount()
+    }
   }
 }
 </script>
@@ -360,31 +373,6 @@ export default {
       position: relative;
       height: 100px;
       @include flex();
-      .header-logo {
-        width: 55px;
-        height: 55px;
-        background: #ff6700;
-        a {
-          width: 110px;
-          height: 55px;
-          display: inline-block;
-          &::before {
-            content: ' ';
-            @include bgImg(55px, 55px, '/imgs/logo8.png', 55px);
-            cursor: pointer;
-            transition: margin 0.2s;
-          }
-          &::after {
-            content: ' ';
-            @include bgImg(55px, 55px, '/imgs/logo6.png', 55px);
-            cursor: pointer;
-          }
-          &:hover::before {
-            margin-left: -55px;
-            transition: margin 0.2s;
-          }
-        }
-      }
       .header-menu {
         display: inline-block;
         width: 643px;

@@ -47,10 +47,16 @@ export default {
       this.$http.post('/user/login', {
         username,
         password
-      }).then((res) => {
-        this.$cookie.set('userId', res.id, { expires: '1M' })
+      }).then((res = {}) => {
+        this.$cookie.set('userId', res.id, { expires: 'session' })
         this.$store.dispatch('saveUserName', res.username)
-        this.$router.push('/index')
+        this.$router.push({
+          name: 'index',
+          params: {
+            from: 'login'
+          }
+        })
+        this.$message.success('登录成功')
       })
     }
   }

@@ -64,7 +64,7 @@ export default {
         password,
         email
       }).then((res) => {
-        alert('注册成功,即将跳转到登录页面')
+        this.$message.success('注册成功,即将跳转到登录页面')
         setTimeout(() => {
           this.$router.push('/login')
         }, 1500)

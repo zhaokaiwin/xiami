@@ -8,13 +8,15 @@
 import { mapActions } from 'vuex'
 export default {
   mounted () {
-    this.getUser()
-    this.getCartCount()
+    if (this.$cookie.get('userId')) {
+      this.getUser()
+      this.getCartCount()
+    }
   },
   methods: {
     ...mapActions(['saveUserName']),
     getUser () {
-      this.$http.get('/user').then((res) => {
+      this.$http.get('/user').then((res = {}) => {
         // to-do 保存在vuex中
         // this.$store.dispatch('saveUserName', res.username)
         this.saveUserName(res.username)

@@ -6,9 +6,9 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueLazyload from 'vue-lazyload'
 import VueCookie from 'vue-cookie'
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
-Vue.use(ElementUI)
+import { Message } from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+// Vue.use(ElementUI)
 const mock = true
 if (mock) {
   require('./mock/api')
@@ -16,6 +16,7 @@ if (mock) {
 // import env from './env'
 // 根据前端的跨域方式进行处理 例如接口为 /a/b  在前端进行转化为/api/a/b =>在转发过程中将/api干掉了变为 /a/b
 // 只要cors 和 jsonp 才需要环境变量配置
+Vue.prototype.$message = Message
 axios.defaults.baseURL = '/api'
 axios.defaults.timeout = 8000 // 超时8s
 // 根据环境变量获取不同的请求地址
@@ -32,7 +33,7 @@ axios.interceptors.response.use(function (response) {
     }
     return Promise.reject(res)
   } else {
-    alert(res.msg)
+    Message.warning(res.msg)
     return Promise.reject(res)
   }
 })
