@@ -75,3 +75,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 | 其他 | 具体参考官网进行学习 |
 
 ## 三、使用介绍
+1. **如何请求数据**
+   
