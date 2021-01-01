@@ -46,7 +46,14 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
    ![商品页面](https://github.com/zhaokaiwin/zhaokaiwin/blob/main/%E5%95%86%E5%93%81%E9%A1%B5%E9%9D%A2.png) 
 #### 商品详情页面
    ![商品详情页面](https://github.com/zhaokaiwin/zhaokaiwin/blob/main/%E5%95%86%E5%93%81%E8%AF%A6%E6%83%85%E9%A1%B5%E9%9D%A2.png) 
-  
+#### 购物车页面
+   ![购物车页面](https://github.com/zhaokaiwin/zhaokaiwin/blob/main/%E8%B4%AD%E7%89%A9%E8%BD%A6%E9%A1%B5%E9%9D%A2.png) 
+#### 登录页面
+   ![登录页面](https://github.com/zhaokaiwin/zhaokaiwin/blob/main/%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2.png) 
+#### 注册页面
+   ![注册页面](https://github.com/zhaokaiwin/zhaokaiwin/blob/main/%E6%B3%A8%E5%86%8C%E9%A1%B5%E9%9D%A2.png) 
+
+   
 二、项目目录介绍  
 
 
@@ -68,3 +75,10 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 | 其他 | 具体参考官网进行学习 |
 
 ## 三、使用介绍
+1. **如何请求数据**
+   建议使用 axios配合vue-axios 进行数据请求，在 main.js 位置进行全局配置
+```
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+Vue.use(VueAxios, axios)
+```
