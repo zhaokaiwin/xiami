@@ -52,6 +52,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
    ![登录页面](https://github.com/zhaokaiwin/zhaokaiwin/blob/main/%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2.png) 
 #### 注册页面
    ![注册页面](https://github.com/zhaokaiwin/zhaokaiwin/blob/main/%E6%B3%A8%E5%86%8C%E9%A1%B5%E9%9D%A2.png) 
+#### 订单确认界面
 
 
 二、项目目录介绍  
