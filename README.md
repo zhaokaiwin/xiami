@@ -82,5 +82,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ```javascript
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-
+Vue.use(VueAxios, axios)
 ```
