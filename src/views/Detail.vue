@@ -131,7 +131,7 @@ export default {
         productId: this.id,
         selected: true
       }).then(res => {
-        console.log(res)
+        // console.log(res)
         const count = res.cartTotalQuantity
         this.$store.dispatch('saveCartCount', count)
         this.$router.push('/cart')

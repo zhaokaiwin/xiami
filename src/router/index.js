@@ -22,7 +22,10 @@ const routes = [
       {
         path: '/index',
         name: 'index',
-        component: Index
+        component: Index,
+        meta: {
+          title: 'Kaiwin'
+        }
       },
       {
         path: '/product/:id',
@@ -39,7 +42,10 @@ const routes = [
   {
     path: '/cart',
     name: 'cart',
-    component: Cart
+    component: Cart,
+    meta: {
+      title: '购物车'
+    }
   },
   {
     path: '/order',
@@ -92,5 +98,10 @@ const routes = [
 const router = new VueRouter({
   routes
 })
-
+router.beforeEach((to, from, next) => {
+  if (to.meta.title) {
+    document.title = to.meta.title
+  }
+  next()
+})
 export default router

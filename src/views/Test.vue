@@ -1,6 +1,8 @@
 <template>
   <div>
-    <el-form
+    <button @click="addRoute">addRoute</button>
+    <router-link to="/test2">跳转到test2页面</router-link>
+    <!-- <el-form
       :inline="true"
       :model="data"
       class="demo-form-inline"
@@ -21,10 +23,11 @@
         <el-button type="primary" @click="onSubmit">查询</el-button>
         <el-button type="primary" @click="addRules">添加新的校验规则</el-button>
       </el-form-item>
-    </el-form>
+    </el-form> -->
   </div>
 </template>
 <script>
+import Test2 from './Test2'
 export default {
   data () {
     const userValidator = (rule, value, callback) => {
@@ -45,6 +48,12 @@ export default {
     }
   },
   methods: {
+    // 动态添加路由
+    addRoute () {
+      this.$router.addRoutes([
+        { path: '/test2', component: Test2 }
+      ])
+    },
     onSubmit () {
       this.$refs.form.validate((isValidate, errors) => {
         console.log(errors)
