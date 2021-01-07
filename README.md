@@ -85,3 +85,28 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 Vue.use(VueAxios, axios)
 ```
+- 在 vue 页面中调用 axios 方法
+```
+methods: {
+    async init () {
+      const params = {
+        categoryId: 100012,
+        pageSize: 14
+      }
+      const res = await this.$http.get('/products', { params })
+      res.list = res.list.slice(6, 14)
+      this.productList = [res.list.slice(0, 4), res.list.slice(4, 8)]
+    },
+    addCart (id) {
+      this.$http.post('/carts', {
+        productId: id,
+        selected: true
+      }).then((res) => {
+        this.showModal = true
+        this.$store.dispatch('saveCartCount', res.cartTotalQuantity)
+      }).catch((err) => {
+        this.showModal = true
+        console.log(err)
+      })
+    },
+```
