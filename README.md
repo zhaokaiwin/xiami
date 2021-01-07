@@ -79,6 +79,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## 三、使用介绍
 1. **如何请求数据**
    建议使用 axios配合vue-axios 进行数据请求，在 main.js 位置进行全局配置
+- axios 的 main.js 配置参考范例（因人而异）
 ```javascript
 import axios from 'axios'
 import VueAxios from 'vue-axios'
