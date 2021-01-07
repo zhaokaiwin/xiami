@@ -86,7 +86,7 @@ import VueAxios from 'vue-axios'
 Vue.use(VueAxios, axios)
 ```
 - 在 vue 页面中调用 axios 方法
-```
+```javascript
 methods: {
     async init () {
       const params = {
@@ -111,7 +111,7 @@ methods: {
     },
 ```
 - 因为使用了插件`vue-axios`详细用法参考[vue-axios使用规则](https://www.npmjs.com/package/vue-axios)，这里给出基本使用实例
-```
+```js
 Vue.axios.get(api).then((response) => {
   console.log(response.data)
 })
