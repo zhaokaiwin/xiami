@@ -52,6 +52,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
    ![登录页面](https://github.com/zhaokaiwin/zhaokaiwin/blob/main/%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2.png) 
 #### 注册页面
    ![注册页面](https://github.com/zhaokaiwin/zhaokaiwin/blob/main/%E6%B3%A8%E5%86%8C%E9%A1%B5%E9%9D%A2.png) 
+#### 订单确认界面
+   ![订单确认界面](https://github.com/zhaokaiwin/zhaokaiwin/blob/main/%E8%AE%A2%E5%8D%95%E7%A1%AE%E8%AE%A4%E9%A1%B5%E9%9D%A2.png)
 
 
 二、项目目录介绍  
@@ -76,9 +78,49 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## 三、使用介绍
 1. **如何请求数据**
-   建议使用 axios配合vue-axios 进行数据请求，在 main.js 位置进行全局配置
+   建议使用 axios 配合 vue-axios 进行数据请求，在 main.js 位置进行全局配置
+- axios 的 main.js 配置参考范例（因人而异）
 ```javascript
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 Vue.use(VueAxios, axios)
+```
+- 在 vue 页面中调用 axios 方法
+```javascript
+methods: {
+    async init () {
+      const params = {
+        categoryId: 100012,
+        pageSize: 14
+      }
+      const res = await this.$http.get('/products', { params })
+      res.list = res.list.slice(6, 14)
+      this.productList = [res.list.slice(0, 4), res.list.slice(4, 8)]
+    },
+    addCart (id) {
+      this.$http.post('/carts', {
+        productId: id,
+        selected: true
+      }).then((res) => {
+        this.showModal = true
+        this.$store.dispatch('saveCartCount', res.cartTotalQuantity)
+      }).catch((err) => {
+        this.showModal = true
+        console.log(err)
+      })
+    },
+```
+- 因为使用了插件`vue-axios`详细用法参考[vue-axios使用规则](https://www.npmjs.com/package/vue-axios)，这里给出基本使用实例
+```js
+Vue.axios.get(api).then((response) => {
+  console.log(response.data)
+})
+
+this.axios.get(api).then((response) => {
+  console.log(response.data)
+})
+
+this.$http.get(api).then((response) => {
+  console.log(response.data)
+})
 ```
