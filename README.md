@@ -110,3 +110,17 @@ methods: {
       })
     },
 ```
+- 因为使用了插件vue-axios详细用法参考[vue-axios使用规则](https://www.npmjs.com/package/vue-axios)，这里给出基本使用实例
+```
+Vue.axios.get(api).then((response) => {
+  console.log(response.data)
+})
+
+this.axios.get(api).then((response) => {
+  console.log(response.data)
+})
+
+this.$http.get(api).then((response) => {
+  console.log(response.data)
+})
+```
