@@ -123,4 +123,5 @@ this.axios.get(api).then((response) => {
 this.$http.get(api).then((response) => {
   console.log(response.data)
 })
+
 ```
