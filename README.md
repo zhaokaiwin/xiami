@@ -124,5 +124,4 @@ this.$http.get(api).then((response) => {
   console.log(response.data)
 })
 
-
 ```
