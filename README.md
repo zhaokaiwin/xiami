@@ -126,4 +126,3 @@ this.$http.get(api).then((response) => {
 
 ```
 
-
